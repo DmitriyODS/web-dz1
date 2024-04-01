@@ -17,7 +17,33 @@
 </header>
 <main class="flex flex-row w-full h-full overflow-hidden">
     <section class="py-8 bg-base-300 rounded-2xl w-full m-4 overflow-auto flex flex-wrap justify-around gap-4">
-
+        <form id="profile-form" class="flex flex-col gap-4">
+            <label class="input input-bordered flex items-center gap-2">
+                Фамилия
+                <input type="text" class="grow" pattern="^[A-Z][a-z]*$" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Email
+                <input type="email" class="grow" pattern="/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Дата рождения
+                <input type="date" class="grow" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Номер карты
+                <input type="text" pattern="^\d{4}-\d{4}-\d{4}-\d{4}$" class="grow" />
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Дата окончания
+                <input type="text" pattern="^\d{2}\s\d{2}$" class="grow"/>
+            </label>
+            <label class="input input-bordered flex items-center gap-2">
+                Код карты
+                <input type="text" pattern="^\d{3}$" class="grow"/>
+            </label>
+            <button type="submit" class="btn btn-primary">сохранить</button>
+        </form>
     </section>
 </main>
 <section class="flex justify-center items-center">

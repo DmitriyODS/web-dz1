@@ -129,7 +129,7 @@ function Render() {
     userData.likesGoodsIDs.forEach((it) => {
         const item = itemsLst[it-1];
         tableContent.insertAdjacentHTML('beforeend', `
-<tr class="text-center">
+<tr class="text-center hover:bg-base-100 cursor-pointer">
     <td>
         <p class="font-bold text-[1.5rem]">${item.title}</p>
     </td>

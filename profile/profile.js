@@ -100,6 +100,19 @@ function InCart(itemID) {
     Render();
 }
 
+document.getElementById("profile-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const form = event.target;
+    const inputs = form.querySelectorAll("input");
+
+    for (let i = 0; i < inputs.length; i++) {
+        var input = inputs[i];
+        if (!input.checkValidity()) {
+            alert(input.validationMessage);
+        }
+    }
+});
+
 window.SwitchLike = SwitchLike;
 window.InCart = InCart;
 

@@ -141,8 +141,24 @@ function OnChecked(element) {
     Render();
 }
 
+function OnClickAll(element) {
+    if (!element.checked) {
+        userData.selectedLst = [];
+    } else {
+        for (let key in userData.buyLst) {
+            if (userData.buyLst.hasOwnProperty(key)) {
+                userData.selectedLst.push(key.toString());
+            }
+        }
+    }
+
+    SaveData();
+    Render();
+}
+
 window.OnChangeCount = OnChangeCount;
 window.OnChecked = OnChecked;
+window.OnClickAll = OnClickAll;
 
 function Render() {
     tableContent.innerText = '';
@@ -153,7 +169,7 @@ function Render() {
             const isCheck = userData.selectedLst.includes(key) ? 'checked' : '';
 
             tableContent.insertAdjacentHTML('beforeend', `
-            <tr class="text-center">
+            <tr class="text-center hover:bg-base-100 cursor-pointer">
                 <td>
                     <p class="font-bold text-[1.5rem]">${item.title}</p>
                 </td>
@@ -185,6 +201,13 @@ function Render() {
             `)
         }
     }
+
+    const checkeds = tableContent.querySelectorAll('input[type=checkbox]')
+    checkeds.forEach((it) => {
+        if (userData.selectedLst.includes(it.name)) {
+            it.checked = true;
+        }
+    })
 
     countLikes.innerText = userData.likesGoodsIDs.length.toString();
     resSum.innerText = `Итого: ${SumCart()} руб.`
