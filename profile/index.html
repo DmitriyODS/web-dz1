@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru" data-theme="coffee">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+    <script type="module" src="/profile/profile.js" defer></script>
+    <title>Магазин -> Профиль</title>
+</head>
+<body>
+<header>
+    <h1 class="ml-6">Профиль</h1>
+</header>
+<main class="flex flex-row w-full h-full overflow-hidden">
+    <section class="py-8 bg-base-300 rounded-2xl w-full m-4 overflow-auto flex flex-wrap justify-around gap-4">
+
+    </section>
+</main>
+<section class="flex justify-center items-center">
+    <nav role="tablist" class="tabs tabs-boxed">
+        <a href="/" role="tab" class="tab text-lg font-bold px-8 py-2 h-min w-min tab-hover">товары</a>
+        <a href="/favorites/" role="tab" class="tab text-lg font-bold px-8 py-2 h-min w-max tab-hover flex gap-2">
+            избранное
+            <div id="count-likes" class="badge badge-primary">0</div>
+        </a>
+        <a href="/basket/" role="tab" class="tab text-lg font-bold px-8 py-2 h-min w-max tab-hover flex gap-2">
+            корзина
+            <div id="count-buy" class="badge badge-primary">0</div>
+        </a>
+        <a href="/profile/" role="tab" class="tab text-lg font-bold px-8 py-2 h-min w-min tab-active">профиль</a>
+    </nav>
+</section>
+</body>
+</html>
